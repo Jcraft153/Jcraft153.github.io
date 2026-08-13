@@ -1,4 +1,5 @@
 <template>
+  <!-- VariableProximity: Makes each letter respond to the nearby pointer. -->
   <span class="variable-proximity" :aria-label="text">
     <span
       v-for="(letter, index) in letters"

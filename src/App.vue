@@ -1,8 +1,11 @@
 <template>
   <main class="hello-world">
+    <!-- GlyphRain: animated canvas background. -->
     <GlyphRain />
     <section class="content" aria-labelledby="page-title">
+      <!-- VariableProximity: pointer-responsive variable-font heading. -->
       <h1 id="page-title"><VariableProximity text="Hello world" /></h1>
+      <!-- MagicBento: interactive card grid; the live README is its slot content. -->
       <MagicBento>
         <div class="readme" aria-live="polite">
         <p v-if="isLoading">Loading profile…</p>
@@ -20,8 +23,11 @@
 <script>
 import DOMPurify from 'dompurify'
 import { marked } from 'marked'
+// GlyphRain component: animated falling-glyph canvas background.
 import GlyphRain from './components/GlyphRain.vue'
+// MagicBento component: pointer-reactive profile card layout.
 import MagicBento from './components/MagicBento.vue'
+// VariableProximity component: letters react to pointer distance.
 import VariableProximity from './components/VariableProximity.vue'
 
 export default {

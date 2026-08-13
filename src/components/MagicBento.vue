@@ -1,4 +1,5 @@
 <template>
+  <!-- MagicBento: Interactive card grid with spotlight and tilt effects. -->
   <section class="magic-bento" aria-label="Profile overview">
     <article class="bento-card bento-card--intro" @mousemove="tiltCard" @mouseleave="resetCard">
       <p class="bento-label">GitHub profile</p>

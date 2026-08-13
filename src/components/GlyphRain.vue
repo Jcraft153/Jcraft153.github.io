@@ -1,4 +1,5 @@
 <template>
+  <!-- GlyphRain: Canvas-based animated glyph background. -->
   <canvas ref="canvas" class="glyph-rain" aria-hidden="true" />
 </template>
 
