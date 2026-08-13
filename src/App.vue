@@ -30,6 +30,7 @@ export default {
     }
   },
   async mounted() {
+    // Dynamic GitHub README: copy this block to load and safely render another public README.
     try {
       const response = await fetch('https://raw.githubusercontent.com/Jcraft153/Jcraft153/main/README.md')
       if (!response.ok) throw new Error(`GitHub returned ${response.status}`)
