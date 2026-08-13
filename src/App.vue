@@ -6,7 +6,7 @@
       <!-- VariableProximity: pointer-responsive variable-font heading. -->
       <h1 id="page-title"><VariableProximity text="Hello world" /></h1>
       <!-- MagicBento: interactive card grid; the live README is its slot content. -->
-      <MagicBento>
+      <MagicBento :repositories="repositories" :repositories-loading="repositoriesLoading">
         <div class="readme" aria-live="polite">
         <p v-if="isLoading">Loading profile…</p>
         <div v-else-if="readmeHtml" v-html="readmeHtml" />
@@ -37,6 +37,8 @@ export default {
       isLoading: true,
       readmeHtml: '',
       readmeUrl: 'https://github.com/Jcraft153/Jcraft153/blob/main/README.md',
+      repositories: [],
+      repositoriesLoading: true,
     }
   },
   async mounted() {
@@ -50,6 +52,23 @@ export default {
       console.warn('Unable to load GitHub profile README.', error)
     } finally {
       this.isLoading = false
+    }
+
+    // Dynamic public-repository list: copy this request to show another GitHub user's repositories.
+    try {
+      const response = await fetch('https://api.github.com/users/Jcraft153/repos?type=public&sort=updated&per_page=100')
+      if (!response.ok) throw new Error(`GitHub returned ${response.status}`)
+      const repositories = await response.json()
+      this.repositories = repositories.map((repository) => ({
+        id: repository.id,
+        name: repository.name,
+        url: repository.html_url,
+        description: repository.description,
+      }))
+    } catch (error) {
+      console.warn('Unable to load public GitHub repositories.', error)
+    } finally {
+      this.repositoriesLoading = false
     }
   },
 }
