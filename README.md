@@ -1,6 +1,6 @@
 # Jcraft153.github.io
 
-A Vue 3 + Vite site published through GitHub Pages.
+A Vue 2 + Vite site published through GitHub Pages.
 
 ## Work locally
 
@@ -15,6 +15,6 @@ Create a production build with `npm run build`. Every push to the `primus` branc
 
 ## First edits
 
-- Edit the site content in `src/App.vue`.
-- Add reusable UI parts in `src/components/`.
-- Update the styles in `src/styles.css`.
+- Edit the page in `src/App.vue`.
+- Add reusable Vue components in `src/components/` as you learn.
+- Update the page styles in `src/styles.css`.
