@@ -97,10 +97,10 @@ export default {
           const alpha = isHead ? 0.95 : Math.max(0.025, 0.3 * (1 - trailIndex / column.length))
           const glow = isHead ? 14 + stirred * 18 : 0
           context.shadowBlur = glow
-          context.shadowColor = 'rgba(68, 153, 255, 0.9)'
+          context.shadowColor = 'rgba(193, 112, 255, 0.9)'
           context.fillStyle = isHead
-            ? `rgba(216, 238, 255, ${alpha})`
-            : `rgba(68, 153, 255, ${alpha})`
+            ? `rgba(244, 239, 248, ${alpha})`
+            : `rgba(193, 112, 255, ${alpha})`
           const glyphProgress = Math.floor(column.phase + trailIndex * 13 + column.y / cell)
           const glyphIndex = ((glyphProgress % GLYPHS.length) + GLYPHS.length) % GLYPHS.length
           context.fillText(GLYPHS[glyphIndex], column.x + cell / 2, y)

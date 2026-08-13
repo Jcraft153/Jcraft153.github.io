@@ -59,7 +59,7 @@ export default {
       return {
         fontVariationSettings: `'wght' ${400 + strength * 550}, 'wdth' ${100 + strength * 35}`,
         transform: `translateY(${-strength * 8}px) scale(${1 + strength * 0.08})`,
-        textShadow: strength ? `0 0 ${12 + strength * 18}px rgba(145, 203, 255, ${strength * 0.9})` : 'none',
+        textShadow: strength ? `0 0 ${12 + strength * 18}px rgba(209, 155, 255, ${strength * 0.9})` : 'none',
       }
     },
   },
