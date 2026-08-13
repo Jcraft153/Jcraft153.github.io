@@ -2,15 +2,17 @@
   <main class="hello-world">
     <GlyphRain />
     <section class="content" aria-labelledby="page-title">
-      <h1 id="page-title">Hello world</h1>
-      <article class="readme" aria-live="polite">
+      <h1 id="page-title"><VariableProximity text="Hello world" /></h1>
+      <MagicBento>
+        <div class="readme" aria-live="polite">
         <p v-if="isLoading">Loading profile…</p>
         <div v-else-if="readmeHtml" v-html="readmeHtml" />
         <p v-else>
           I couldn’t load the profile right now.
           <a :href="readmeUrl" target="_blank" rel="noreferrer">Read it on GitHub</a>.
         </p>
-      </article>
+        </div>
+      </MagicBento>
     </section>
   </main>
 </template>
@@ -19,9 +21,11 @@
 import DOMPurify from 'dompurify'
 import { marked } from 'marked'
 import GlyphRain from './components/GlyphRain.vue'
+import MagicBento from './components/MagicBento.vue'
+import VariableProximity from './components/VariableProximity.vue'
 
 export default {
-  components: { GlyphRain },
+  components: { GlyphRain, MagicBento, VariableProximity },
   data() {
     return {
       isLoading: true,
