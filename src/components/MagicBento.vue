@@ -2,7 +2,7 @@
   <!-- MagicBento: Interactive card grid with spotlight and tilt effects. -->
   <section class="magic-bento" aria-label="Profile overview">
     <article class="bento-card bento-card--repositories" @mousemove="tiltCard" @mouseleave="resetCard">
-      <p class="bento-label">Public repositories</p>
+      <p class="bento-label">My public repos:</p>
       <p v-if="repositoriesLoading">Loading repositories…</p>
       <ul v-else-if="repositories.length" class="repository-list">
         <!-- Repository description popover: opens on hover and keyboard focus. -->
@@ -29,13 +29,13 @@
     </article>
 
     <article class="bento-card bento-card--readme" @mousemove="tiltCard" @mouseleave="resetCard">
-      <p class="bento-label">About</p>
+      <p class="bento-label">About me:</p>
       <slot />
     </article>
 
     <a class="bento-card bento-card--link" href="https://github.com/Jcraft153" target="_blank" rel="noreferrer" @mousemove="tiltCard" @mouseleave="resetCard">
-      <span class="bento-label">Explore</span>
-      <strong>Visit GitHub <span aria-hidden="true">↗</span></strong>
+      <span class="bento-label">Explore:</span>
+      <strong>Visit my GitHub <span aria-hidden="true">↗</span></strong>
     </a>
 
     <!-- Repository description popover: a top-level layer so bento-card clipping cannot cut it off. -->
