@@ -23,6 +23,8 @@
 <script>
 import DOMPurify from 'dompurify'
 import { marked } from 'marked'
+// Repository bento configuration: controls which public repositories are shown.
+import { repositoryBentoConfig } from './config/repositoryBento'
 // GlyphRain component: animated falling-glyph canvas background.
 import GlyphRain from './components/GlyphRain.vue'
 // MagicBento component: pointer-reactive profile card layout.
@@ -59,12 +61,16 @@ export default {
       const response = await fetch('https://api.github.com/users/Jcraft153/repos?type=public&sort=updated&per_page=100')
       if (!response.ok) throw new Error(`GitHub returned ${response.status}`)
       const repositories = await response.json()
-      this.repositories = repositories.map((repository) => ({
-        id: repository.id,
-        name: repository.name,
-        url: repository.html_url,
-        description: repository.description,
-      }))
+      const excludedRepositoryNames = repositoryBentoConfig.excludedRepositoryNames.map((name) => name.toLowerCase())
+      this.repositories = repositories
+        .filter((repository) => !repositoryBentoConfig.hideForks || !repository.fork)
+        .filter((repository) => !excludedRepositoryNames.includes(repository.name.toLowerCase()))
+        .map((repository) => ({
+          id: repository.id,
+          name: repository.name,
+          url: repository.html_url,
+          description: repository.description,
+        }))
     } catch (error) {
       console.warn('Unable to load public GitHub repositories.', error)
     } finally {
