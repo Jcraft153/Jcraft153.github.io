@@ -1,10 +1,11 @@
 // Repository bento configuration.
-// Add repository names here when you never want them listed on the website.
-// Names are compared without regard to capital letters.
+// I don't want some repos to appear by default as I want to present work I'm happy with.
+
 export const repositoryBentoConfig = {
-  // Forks are hidden by default because they are not original work.
+  // Forks are hidden by default because they are not original work - mostly forked for testing or local-copy purposes.
   hideForks: true,
 
+  // Explicit exclusion list, not case sensitive.
   // Example: ['scratch-project', 'experimental-fork']
-  excludedRepositoryNames: [],
+  excludedRepositoryNames: ['Jcraft153', 'anthropic-leaked-source-code'],
 }
