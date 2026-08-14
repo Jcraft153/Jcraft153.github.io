@@ -1,7 +1,7 @@
 <template>
   <!-- TrustedLogos: Replace image files in ./images to customise this logo strip. -->
   <section class="trusted-logos" aria-labelledby="trusted-logos-title">
-    <h2 id="trusted-logos-title">Trusted by teams from around the world</h2>
+    <h2 id="trusted-logos-title">Who I work with:</h2>
     <ul>
       <li v-for="logo in logos" :key="logo.name">
         <img :src="logo.source" :alt="logo.name" />
