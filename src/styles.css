@@ -4,7 +4,7 @@
 body { margin: 0; }
 .hello-world { display: grid; min-height: 100vh; place-items: center; overflow: hidden; position: relative; isolation: isolate; padding: 3rem 1.5rem; background: radial-gradient(circle at 50% 40%, #702D7B 0%, #55215e 52%, #321338 100%); }
 .glyph-rain { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .9; }
-.content { width: min(100%, 760px); }
+.content { width: min(100%, 950px); }
 .hello-world h1 { margin: 0 0 .35em; padding: .2em .35em; color: #f1f1f4; font-size: clamp(3rem, 10vw, 6rem); letter-spacing: -.055em; text-align: center; text-shadow: 0 0 22px rgba(209, 155, 255, .78), 0 4px 30px #321338; }
 .readme { color: #ededf1; font-size: clamp(1rem, 2.25vw, 1.17rem); line-height: 1.7; }
 .readme p { margin: 0 0 1em; }.readme p:last-child { margin-bottom: 0; }.readme a { color: #dab9f5; }.readme a:hover { color: #fff; }
