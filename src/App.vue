@@ -16,6 +16,8 @@
         </p>
         </div>
       </MagicBento>
+      <!-- TrustedLogos: replaceable image logo strip below the bento. -->
+      <TrustedLogos />
     </section>
   </main>
 </template>
@@ -29,11 +31,13 @@ import { repositoryBentoConfig } from './config/repositoryBento'
 import GlyphRain from './components/GlyphRain.vue'
 // MagicBento component: pointer-reactive profile card layout.
 import MagicBento from './components/MagicBento.vue'
+// TrustedLogos component: image strip sourced from components/images.
+import TrustedLogos from './components/TrustedLogos.vue'
 // VariableProximity component: letters react to pointer distance.
 import VariableProximity from './components/VariableProximity.vue'
 
 export default {
-  components: { GlyphRain, MagicBento, VariableProximity },
+  components: { GlyphRain, MagicBento, TrustedLogos, VariableProximity },
   data() {
     return {
       isLoading: true,
